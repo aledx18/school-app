@@ -1,119 +1,5 @@
+'use client'
 /* eslint-disable no-unused-vars */
-
-// const menuItems = [
-//   {
-//     title: 'MENU',
-//     items: [
-//       {
-//         icon: 'House',
-//         label: 'Home',
-//         href: '/',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'GraduationCap',
-//         label: 'Teachers',
-//         href: '/list/teachers',
-//         visible: ['admin', 'teacher']
-//       },
-//       {
-//         icon: 'Backpack',
-//         label: 'Students',
-//         href: '/list/students',
-//         visible: ['admin', 'teacher']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Parents',
-//         href: '/list/parents',
-//         visible: ['admin', 'teacher']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Subjects',
-//         href: '/list/subjects',
-//         visible: ['admin']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Classes',
-//         href: '/list/classes',
-//         visible: ['admin', 'teacher']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Lessons',
-//         href: '/list/lessons',
-//         visible: ['admin', 'teacher']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Exams',
-//         href: '/list/exams',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Assignments',
-//         href: '/list/assignments',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Results',
-//         href: '/list/results',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'AlarmClockIcon',
-//         label: 'Attendance',
-//         href: '/list/attendance',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'CalendarDays',
-//         label: 'Events',
-//         href: '/list/events',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'MessageCircleMore',
-//         label: 'Messages',
-//         href: '/list/messages',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'Megaphone',
-//         label: 'Announcements',
-//         href: '/list/announcements',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       }
-//     ]
-//   },
-//   {
-//     title: 'OTHER',
-//     items: [
-//       {
-//         icon: 'SquareUserRound',
-//         label: 'Profile',
-//         href: '/profile',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'Settings',
-//         label: 'Settings',
-//         href: '/settings',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       },
-//       {
-//         icon: 'LogOut',
-//         label: 'Logout',
-//         href: '/logout',
-//         visible: ['admin', 'teacher', 'student', 'parent']
-//       }
-//     ]
-//   }
-// ]
 
 import {
   File,
@@ -139,113 +25,147 @@ import {
 } from 'lucide-react'
 
 import { Separator } from '../ui/separator'
-import NavItems from '../navItems'
+import Sidebar from '@/components/sidebar'
 import Link from 'next/link'
 
 export default function Menu() {
   return (
-    <div className='flex flex-col gap-2 py-2 justify-between w-full'>
+    <div className='flex flex-col justify-between py-4 w-full'>
       <div className='flex flex-col gap-y-4'>
         <Link
           href='/'
-          className='flex items-center justify-center lg:justify-start gap-2'>
+          className='flex items-center bg-secondary p-2 justify-center rounded-sm lg:justify-start gap-x-2'>
           <NotebookIcon className='h-5 w-5 text-primary' />
           <span className='hidden lg:block font-bold'>App</span>
         </Link>
         <Separator />
-        <NavItems
+        <Sidebar
           links={[
             {
               title: 'Home',
+              href: '/admin',
               label: '23',
               icon: House,
-              variant: 'default'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Teachers',
+              href: '/list/teachers',
               label: '9',
               icon: GraduationCap,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher']
             },
             {
               title: 'Students',
+              href: '/list/students',
               label: '',
               icon: Backpack,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher']
             },
             {
               title: 'Parents',
               label: '',
+              href: '/parent',
               icon: Users2,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher']
             },
             {
               title: 'Classes',
+              href: '/list/classes',
               label: '',
               icon: NotepadText,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher']
             },
             {
               title: 'Exams',
+              href: '/list/exams',
               label: '',
               icon: NotebookPen,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Assignments',
+              href: '',
               label: '',
               icon: BookTextIcon,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Attendance',
+              href: '',
               label: '',
               icon: BookA,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Events',
+              href: '',
               label: '5',
               icon: CalendarDays,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Messages',
+              href: '',
               label: '',
               icon: MessageCircleMore,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             },
             {
               title: 'Announcements',
+              href: '',
               label: '',
               icon: Megaphone,
-              variant: 'ghost'
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
+            }
+          ]}
+        />
+        <Separator />
+      </div>
+
+      <div>
+        <Separator />
+
+        <Sidebar
+          links={[
+            {
+              title: 'Profile',
+              href: '/profile',
+              label: '128',
+              icon: SquareUserRound,
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
+            },
+            {
+              title: 'Settings',
+              href: '/settings',
+              label: '',
+              icon: Settings,
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
+            },
+            {
+              title: 'Logout',
+              href: '/logout',
+              label: '',
+              icon: LogOut,
+              variant: 'ghost',
+              visible: ['admin', 'teacher', 'student', 'parent']
             }
           ]}
         />
       </div>
-      <NavItems
-        links={[
-          {
-            title: 'Profile',
-            label: '128',
-            icon: SquareUserRound,
-            variant: 'ghost'
-          },
-          {
-            title: 'Settings',
-            label: '',
-            icon: Settings,
-            variant: 'ghost'
-          },
-          {
-            title: 'Logout',
-            label: '',
-            icon: LogOut,
-            variant: 'ghost'
-          }
-        ]}
-      />
     </div>
   )
 }

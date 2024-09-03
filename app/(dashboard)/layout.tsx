@@ -1,4 +1,5 @@
 import Menu from '@/components/menu/menu'
+import Navbar from '@/components/navbar'
 
 import { ReactNode } from 'react'
 
@@ -9,13 +10,12 @@ export default function DashboardLayout({
 }>) {
   return (
     <div className='flex h-svh'>
-      <div className='w-[14%] md:w-[8%] lg:w-[15%] lg:p-4 flex justify-between'>
+      <div className='w-[14%] md:w-[8%] lg:w-[15%] lg:px-4 flex justify-between bg-popover'>
         <Menu />
       </div>
-      <div className='w-[86%] md:w-[92%] lg:w-[85%] bg-sky-50'>
-        <div className='flex h-full items-center justify-center p-6'>
-          <span className='font-semibold'>Content</span>
-        </div>
+      <div className='w-[86%] md:w-[92%] lg:w-[85%] xl:w-[86%] overflow-y-scroll flex flex-col '>
+        <Navbar />
+        <div className='p-4 md:p-6 2xl:p-6'>{children}</div>
       </div>
     </div>
   )
