@@ -21,7 +21,7 @@ export default function Sidebar({ links }: NavProps) {
   const pathname = usePathname()
   return (
     <div className='group flex flex-col gap-4 py-2'>
-      <nav className='grid gap-2 items-center justify-center lg:justify-normal lg:px-2 px-1'>
+      <nav className='grid gap-1.5 items-center justify-center lg:justify-normal lg:px-2 px-1'>
         {links.map((link, index) => (
           <div key={index}>
             <div className='lg:hidden block'>

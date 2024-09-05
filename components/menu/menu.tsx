@@ -51,7 +51,7 @@ export default function Menu() {
             },
             {
               title: 'Teachers',
-              href: '/list/teachers',
+              href: '/teachers',
               label: '9',
               icon: GraduationCap,
               variant: 'ghost',
@@ -59,7 +59,7 @@ export default function Menu() {
             },
             {
               title: 'Students',
-              href: '/list/students',
+              href: '/students',
               label: '',
               icon: Backpack,
               variant: 'ghost',
@@ -75,7 +75,7 @@ export default function Menu() {
             },
             {
               title: 'Classes',
-              href: '/list/classes',
+              href: '/classes',
               label: '',
               icon: NotepadText,
               variant: 'ghost',
@@ -83,7 +83,7 @@ export default function Menu() {
             },
             {
               title: 'Exams',
-              href: '/list/exams',
+              href: '/exams',
               label: '',
               icon: NotebookPen,
               variant: 'ghost',
