@@ -1,7 +1,7 @@
 import { Input } from '@/components/ui/input'
 import DropDownMenu from './dropDownMenu'
 
-export default function Navbar() {
+export default async function Navbar() {
   return (
     <div className='flex justify-between items-center py-2'>
       <div className='hidden md:flex p-2'>

@@ -10,10 +10,12 @@ import {
 import { Button } from '@/components/ui/button'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import { LogIn, LogOut } from 'lucide-react'
-
 import Link from 'next/link'
+import ThemeSwitcher from './theme/theme-switcher'
 
-export default async function DropDownMenu() {
+export default function DropDownMenu() {
+  const ICON_CLASS = 'text-muted-foreground mr-2 h-4 w-4'
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -37,20 +39,19 @@ export default async function DropDownMenu() {
           </div>
         </DropdownMenuLabel>
         <DropdownMenuSeparator />
-
-        <Link href='/auth/login'>
-          <DropdownMenuItem>
-            <LogIn className='mr-2 h-4 w-4' />
-            <span>Log in</span>
-          </DropdownMenuItem>
-        </Link>
-
         <DropdownMenuGroup>
-          <DropdownMenuItem className='cursor-pointer'>
-            <LogOut className='mr-2 h-4 w-4' />
+          <DropdownMenuItem asChild>
+            <Link href='/auth/login'>
+              <LogIn className={ICON_CLASS} />
+              <span>Log in</span>
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <LogOut className={ICON_CLASS} />
             Logout
           </DropdownMenuItem>
         </DropdownMenuGroup>
+        <ThemeSwitcher iconClass={ICON_CLASS} />
       </DropdownMenuContent>
     </DropdownMenu>
   )
